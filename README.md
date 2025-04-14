@@ -1,6 +1,6 @@
 # <div align="center">DeepVL: Deep Velocity Learning </div>
 
-<div align="center"> <a href="https://ntnu-arl.github.io/deepvl-deep-velocity-learning/"><img src="https://img.shields.io/badge/Homepage-1E88E5?style=flat-square" alt="Homepage"></a> <a href="https://arxiv.org/abs/2502.07726v1"><img src="https://img.shields.io/badge/arXiv-78909C?style=flat-square" alt="arXiv"></a> <a href="https://youtu.be/ctcbrNu_N78?feature=shared"><img src="https://img.shields.io/badge/YouTube-E57373?style=flat-square" alt="YouTube"></a>
+<div align="center"> <a href="https://ntnu-arl.github.io/deepvl-deep-velocity-learning/"><img src="https://img.shields.io/badge/Homepage-1E88E5?style=flat-square" alt="Homepage"></a> <a href="https://arxiv.org/abs/2502.07726v1"><img src="https://img.shields.io/badge/arXiv-78909C?style=flat-square" alt="arXiv"></a> <a href="https://youtu.be/ctcbrNu_N78?feature=shared"><img src="https://img.shields.io/badge/YouTube-E57373?style=flat-square" alt="YouTube"></a> </div>
 
 **DeepVL** is an open-source framework for predicting linear velocity of underwater robots, enabling robust state estimation during blackouts of exteroceptive sensors (e.g., cameras, DVLs, or UBSLs). It takes the actuator commands, IMU measurements, and battery voltage as an input and predicts the robot velocity in the body frame.
 
