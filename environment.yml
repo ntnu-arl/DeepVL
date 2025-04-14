@@ -1,0 +1,30 @@
+name: deepvl
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.8
+  - pip
+  - numpy
+  - scipy
+  - matplotlib
+  - opencv
+  - scikit-image
+  - scikit-learn
+  - pillow
+  - imageio
+  - tqdm
+  - jupyterlab
+  - ipywidgets
+  - notebook
+  - cudatoolkit=11.3
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cupy
+  - einops
+  - cmake
+  - pip:
+      - tensorboard
+      - wandb

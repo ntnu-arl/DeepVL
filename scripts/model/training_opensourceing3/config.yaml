@@ -1,0 +1,144 @@
+network:
+  rnn_type: gru
+  ensemble_size: 8
+  num_layers: 3
+  input_size: 16
+  layers:
+  - 40
+  - 40
+  - 40
+  output_size: 3
+  kernel_size: 3
+  dropout: 0.1
+  input_data_mask:
+  - 1
+  - 1
+  - 1
+  skip_connection: false
+training:
+  start_iter: 0
+  actuator_scale_pertub_std: 0.025
+  gnll_start_iter: 1250
+  batch_size:
+    train: 128
+    test: 64
+  lr: 0.001
+  scheduler:
+    gamma: 0.1
+    milestones:
+    - 1000
+    - 2000
+  max_iter: 2500
+testing:
+  uncertainty_type: epistemic
+dataset:
+  dataset_dir: 
+  seq_duration: 15.0
+  downsample_factor: 10
+  seq_sample_density: 7.5
+  gravity_correction: false
+  thruster_scale_noise:
+    train: 0.001
+    test: 0.0
+  vertical_thruster_noise:
+    train: 0.5
+    test: 0.0
+  shuffle:
+    train: true
+    test: true
+  sensor_fps:
+    alphasense_imu: 200
+    fcu_imu: 200
+    motor_command: 200
+    rovio_odom_twist: 20
+    battery: 20
+    static_pressure: 50
+    pressure_rate: 50
+  sensor_stats:
+    alphasense_imu:
+      mean:
+      - -2.72
+      - 0.0
+      - -9.27
+      - 0.0
+      - 0.0
+      - 0.0
+      std:
+      - 0.782
+      - 0.708
+      - 0.28
+      - 0.0596
+      - 0.0703
+      - 0.206
+    fcu_imu:
+      mean:
+      - 0.0
+      - 0.0
+      - 9.8
+      - 0.0
+      - 0.0
+      - 0.0
+      std:
+      - 0.782
+      - 0.708
+      - 0.28
+      - 0.0596
+      - 0.0703
+      - 0.206
+    motor_command:
+      mean:
+      - 1500.0
+      - 1500.0
+      - 1500.0
+      - 1500.0
+      - 1500.0
+      - 1500.0
+      - 1500.0
+      - 1500.0
+      std:
+      - 75.0
+      - 75.0
+      - 75.0
+      - 75.0
+      - 75.0
+      - 75.0
+      - 75.0
+      - 75.0
+    rovio_odom_twist:
+      mean:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      std:
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.05
+      - 0.05
+      - 0.05
+    battery:
+      mean:
+      - 15.0
+      std:
+      - 0.5
+    pressure_rate:
+      mean:
+      - 0.0
+      std:
+      - 50.0
+  step: 1
+utils:
+  save_model: true
+  root_dir: 
+  savename: training_opensourceing3
+  previous_checkpt_path: ''
+git:
+  commit: 
+  branch: 
+  repo: 
+  commit_message:
+summary:
+  comment:

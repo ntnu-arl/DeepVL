@@ -1,0 +1,20 @@
+<launch>
+    <!-- rosbag play with file dir -->
+    <arg name="traj_path" default=""/>
+    <arg name="bag_start" default="0" />
+    <arg name="bag_end" default="1200" />
+    <arg name="bag_rate" default="0.6" />
+    <arg name="delay" default="0.0" />
+    <arg name="with_rovio" default="false" />
+    <arg name="topic_names" default="/qualisys/ariel/odom /alphasense_driver_ros/cam0 /alphasense_driver_ros/cam1 /alphasense_driver_ros/cam2 /alphasense_driver_ros/cam3 /alphasense_driver_ros/cam4 /alphasense_driver_ros/imu /clock /mavros/rc/out /mavros/imu/data /mavros/battery /mavros/imu/static_pressure /voxel_grid/output /rovio/odometry /abss_cov_epistemic/twist /cam0/cam0 /vis/ref_path /pci_command_trajectory_vis" if="$(arg with_rovio)"/>
+    <arg name="topic_names" default="/qualisys/ariel/odom /alphasense_driver_ros/cam0 /alphasense_driver_ros/cam1 /alphasense_driver_ros/cam2 /alphasense_driver_ros/cam3 /alphasense_driver_ros/cam4 /alphasense_driver_ros/imu /clock /mavros/rc/out /mavros/imu/data /mavros/battery /mavros/imu/static_pressure /voxel_grid/output /vis/ref_path /pci_command_trajectory_vis" unless="$(arg with_rovio)"/>
+
+    <node pkg="rosbag" type="play" name="rosbag" args="-d $(arg delay) -r $(arg bag_rate) -s $(arg bag_start) --duration $(arg bag_end) --bags $(arg traj_path) --clock --topics $(arg topic_names)" required="true"/>
+
+    <!-- throttle /mavros/rc/out from 200Hz to 20 Hz -->
+    <!-- <node pkg="topic_tools" type="drop" name="drop_rcout" args="/mavros/rc/out 9 10 /mavros/rc/out_drop" required="true"/>
+    <node pkg="topic_tools" type="drop" name="drop_imu" args="/alphasense_driver_ros/imu 9 10 /alphasense_driver_ros/imu_drop" required="true"/>
+    <node pkg="topic_tools" type="drop" name="drop_imu_fc" args="/mavros/imu/data 9 10 /mavros/imu/data_drop" required="true"/>
+    <node pkg="topic_tools" type="drop" name="drop_static_pressure" args="/mavros/imu/static_pressure 4 5 /mavros/imu/static_pressure_drop" required="true"/> -->
+
+</launch>

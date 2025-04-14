@@ -1,0 +1,27 @@
+<launch>
+
+    <arg name="device" default="cpu"/>
+
+    <arg name="model_name" default="training_opensourceing3"/>
+    <arg name="imu_topic" default="/alphasense_driver_ros/imu"/>
+    <arg name="fcu_imu_topic" default="/mavros/imu/data"/>
+    <arg name="act_topic" default="/mavros/rc/out"/>
+    <arg name="battery_topic" default="/mavros/battery"/>
+    <arg name="use_fcimu_time" default="true"/>
+    <arg name="verbose" default="true"/>
+
+    <node pkg="deepvl_ros" name="deepvl_node" type="deepvl_ros.py" output="screen">
+        
+        <param name="device" value="$(arg device)"/>
+
+        <param name="model_name" value="$(arg model_name)"/>
+        <param name="imu_topic" value="$(arg imu_topic)"/>
+        <param name="fcu_imu_topic" value="$(arg fcu_imu_topic)"/>
+        <param name="act_topic" value="$(arg act_topic)"/>
+        <param name="battery_topic" value="$(arg battery_topic)"/>
+        <param name="use_fcimu_time" value="$(arg use_fcimu_time)"/>
+        <param name="verbose" value="$(arg verbose)"/>
+
+    </node>
+
+</launch>
