@@ -93,6 +93,9 @@ If you use DeepVL in your research, please cite:
 
 ---
 
+## License
+Released under BSD-3-Clause. Intended for civilian use only.
+
 ## Contact
 For questions or support, reach out via [GitHub Issues](https://github.com/ntnu-arl/deepvl/issues) or contact authors:
 
