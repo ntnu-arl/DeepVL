@@ -28,10 +28,23 @@ This repository contains the code for the paper:
 Clone the repository and set up the environment:
 
 ```bash
+cd <your_ros_ws>
 git clone https://github.com/ntnu-arl/deepvl.git
 cd deepvl
 conda env create -f environment.yml
 conda activate deepvl
+```
+
+#### 1.1 ROS Setup
+
+```bash
+cd <your_ros_ws>
+
+# build the ros package
+catkin build deepvl_ros
+
+# make the testing ros node an executable
+chmod +x deepvl_ros.py
 ```
 
 ### 2. Inference Dataset Setup
@@ -42,7 +55,7 @@ dataset:
     dataset_dir: <path-to-dataset>
 ```
 
-### 3. Running DeepVL
+### 3. Launching the deepvl ros node
 Launch the ROS node with pre-trained weights:
 
 ```bash
